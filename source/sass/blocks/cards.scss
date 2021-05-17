@@ -1,0 +1,36 @@
+.cards {
+  max-width: $mobile-card-maxWidth;
+
+  @media #{$tablet} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $card-gap;
+    max-width: $mobile-card-maxWidth * 2 + $card-gap;
+  }
+
+  @media #{$tablet-desktop} {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: $mobile-card-maxWidth * 3 + $card-gap * 2;
+  }
+
+  @media #{$desktop} {
+    display: block;
+    max-width: $mobile-card-maxWidth-desktop;
+  }
+}
+
+.cards__item {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media #{$tablet} {
+    margin-bottom: 0;
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 60px;
+  }
+}

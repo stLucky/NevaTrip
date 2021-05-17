@@ -1,0 +1,15 @@
+.container {
+  padding: 0 $mobile-paddings;
+
+  @media #{$tablet} {
+    padding: 0 $tablet-paddings;
+  }
+
+  @media #{$tablet-desktop} {
+    padding: 0 $tablet-desktop-paddings;
+  }
+
+  @media #{$desktop} {
+    padding: 0 $desktop-paddings;
+  }
+}

@@ -1,0 +1,46 @@
+// Colors
+$black-base: #000000;
+$gray-dark: #404040;
+$gray-dark-extra: #4b4b4b;
+$gray-base: #9e9e9e;
+$white-base: #ffffff;
+$border-color: #8e8e8e;
+$departure-time-color: #343434;
+$departure-time-back: #d9e8ff;
+$departure-time-back-active: #6ba6ff;
+$yellow-base: #fed74b;
+$btn-border-color: #cba500;
+$mark-dark: #3e3e3e;
+$mark-ocean: #099ce8;
+$mark-extra-dark: #323232;
+$purple-base: #7553ff;
+
+// Fonts
+
+$basic-font: "Open Sans", "Arial", sans-serif;
+
+// Other
+$mobile-paddings: 17px;
+$tablet-paddings: 30px;
+$tablet-desktop-paddings: 50px;
+$desktop-paddings: 150px;
+$mobile-card-maxWidth: 500px;
+$mobile-card-maxWidth-desktop: 1140px;
+$card-gap: 20px;
+
+// Viewports
+$tablet-width: 768px;
+$tablet-desktop-width: 1120px;
+$desktop-width: 1440px;
+$tablet: "(min-width: #{$tablet-width})";
+$tablet-desktop: "(min-width: #{$tablet-desktop-width})";
+$desktop: "(min-width: #{$desktop-width})";
+
+// Transition
+$transition-duration: 150ms;
+
+
+
+
+
+

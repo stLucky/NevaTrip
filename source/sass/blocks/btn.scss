@@ -1,0 +1,38 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: $gray-dark;
+  background-color: $yellow-base;
+  border: 0.5px solid $btn-border-color;
+  transition: background-color $transition-duration;
+
+  &:hover {
+    background-color: darken($yellow-base, 7%);
+  }
+
+  &--primary {
+    min-width: 165px;
+    border-radius: 20px;
+  }
+
+  &--secondary {
+    min-width: 193px;
+    border-radius: 10px;
+  }
+
+  @media #{$desktop} {
+    font-size: 18px;
+    line-height: 20px;
+    padding: 16px 25px;
+
+    &--primary {
+      min-width: 187px;
+      border-radius: 23px;
+    }
+  }
+}

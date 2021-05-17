@@ -1,0 +1,30 @@
+.mark {
+  display: block;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &--sun {
+    padding: 11px 18px;
+    color: $mark-dark;
+    background-color: $yellow-base;
+  }
+
+  &--dark {
+    padding: 12px 27px;
+    color: $white-base;
+    background-color: $purple-base;
+  }
+
+  &--ocean {
+    padding: 11px 18px;
+    color: $white-base;
+    background-color: $mark-ocean;
+  }
+
+  @media #{$desktop} {
+    padding: 13px 35px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

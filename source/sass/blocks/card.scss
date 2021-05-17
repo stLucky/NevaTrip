@@ -1,0 +1,283 @@
+$card-rounding: 16px;
+$img-width: 341px;
+$img-height: 284px;
+$img-width-desktop: 473px;
+$img-height-desktop: 369px;
+$mark-width: 16px;
+$feature-height: 20px;
+$departure-btn-width: 63px;
+$departure-btn-height: 24px;
+$departure-btn-width-desktop: 73px;
+$departure-btn-height-desktop: 28px;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: $mobile-card-maxWidth;
+  border: 0.5px solid $border-color;
+  border-radius: $card-rounding;
+
+  &--only-desktop {
+    display: none;
+  }
+
+  @media #{$desktop} {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: $mobile-card-maxWidth-desktop;
+
+    &--only-desktop {
+      display: flex;
+    }
+  }
+}
+
+.card__inner {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 14px 12px 22px 10px;
+
+  @media #{$desktop} {
+    padding: 16px 17px 21px 23px;
+  }
+}
+
+.card__title {
+  margin: 0 0 18px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: $gray-dark;
+
+  @media #{$desktop} {
+    margin: 0 0 11px;
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+.card__time-placement {
+  display: flex;
+  align-items: center;
+  order: -1;
+  margin: 0 0 11px;
+  font-size: 12px;
+  line-height: 20px;
+  color: $gray-base;
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin-right: 9px;
+    background-image: url("../img/icon-time.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media #{$desktop} {
+    order: 0;
+    font-size: 14px;
+  }
+}
+
+.card__features {
+  @include list-reset;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: $feature-height;
+  color: $gray-dark-extra;
+
+  @media #{$desktop} {
+    margin-bottom: 25px;
+    font-size: 18px;
+  }
+}
+
+.card__feature {
+  position: relative;
+  margin-bottom: 14px;
+
+  padding-left: $mark-width + 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: $feature-height / 2;
+    left: 0;
+    width: $mark-width;
+    height: 12px;
+    background-image: url("../img/icon-mark.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-50%);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--departure {
+    @media #{$desktop} {
+      display: flex;
+    }
+  }
+
+  @media #{$desktop} {
+    margin-bottom: 17px;
+  }
+}
+
+.card__feature-text {
+  margin: 0 0 12px;
+
+  @media #{$desktop} {
+    margin: 0 15px 0 0;
+  }
+}
+
+.card__feature-content {
+  padding-left: 16px + 20px;
+}
+
+.card__departures {
+  position: relative;
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, $departure-btn-width);
+  gap: 8px;
+
+  @media #{$desktop} {
+    flex-grow: 1;
+    grid-template-columns: repeat(auto-fit, $departure-btn-width-desktop);
+  }
+}
+
+.card__departure {
+
+  &--only-mobile {
+    @media #{$desktop} {
+      display: none;
+    }
+  }
+}
+
+.card__departure-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $departure-btn-width;
+  min-height: $departure-btn-height;
+  font-size: 14px;
+  line-height: 16px;
+  color: $departure-time-color;
+  background-color: $departure-time-back;
+  border-radius: 11px;
+  transition: background-color $transition-duration;
+
+  &:not(&--active ):hover {
+    background-color: darken($departure-time-back, 5%);
+  }
+
+  &--active {
+    color: $white-base;
+    background-color: $departure-time-back-active;
+  }
+
+  @media #{$desktop} {
+    min-width: $departure-btn-width-desktop;
+    min-height: $departure-btn-height-desktop;
+    font-size: 16px;
+  }
+}
+
+.card__bottom-wrap {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  order: 1;
+
+  @media #{$desktop} {
+    justify-content: flex-start;
+  }
+}
+
+.card__prices {
+  margin-left: 5px;
+  @media #{$desktop} {
+    margin-right: 16px;
+    margin-left: 0;
+  }
+}
+
+.card__price {
+  display: block;
+  font-size: 30px;
+  line-height: 30px;
+
+  @media #{$desktop} {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+.card__price-extra {
+  margin: 0;
+  font-size: 10px;
+
+  @media #{$desktop} {
+    font-size: 14px;
+  }
+}
+
+.card__img-wrap {
+  position: relative;
+  order: -1;
+  width: 100%;
+  height: $img-height;
+  overflow: hidden;
+  border-radius: $card-rounding $card-rounding 0 0;
+
+  @media #{$desktop} {
+    flex-shrink: 0;
+    width: $img-width-desktop;
+    height: auto;
+    border-radius: $card-rounding 0 0 $card-rounding;
+  }
+}
+
+.card__mark {
+  position: absolute;
+  top: 40px;
+  left: 0;
+
+  &--top {
+    top: 0;
+  }
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  object-fit: cover;
+}
+
+.card__btn {
+  margin-right: 5px;
+
+  @media #{$desktop} {
+    margin-right: 0;
+  }
+}

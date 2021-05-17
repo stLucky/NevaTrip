@@ -1,0 +1,26 @@
+// Normalize
+
+@import "normalize";
+
+
+
+// Global
+
+@import "global/variables";
+@import "global/global";
+@import "global/mixins";
+
+
+
+// Blocks
+@import "blocks/visually-hidden";
+@import "blocks/page";
+@import "blocks/container";
+@import "blocks/btn";
+@import "blocks/mark";
+@import "blocks/cards";
+@import "blocks/card";
+
+
+
+
