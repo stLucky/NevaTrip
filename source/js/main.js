@@ -33,25 +33,25 @@ marks.forEach((mark) => {
 
 const departuresContainers = document.querySelectorAll('.card__departures');
 
-const getMoreItem = () => {
-  const li = document.createElement('li');
-  const a = document.createElement('a');
-
-  li.className = 'card__departure';
-  a.href = '#URL';
-  a.className = 'card__departure-btn';
-  a.textContent = 'eще...';
-
-  li.append(a);
-
-  return li;
-};
-
-const moreItem = getMoreItem();
-
 departuresContainers.forEach((container) => {
   const departureItems = container.querySelectorAll('.card__departure');
   const btns = container.querySelectorAll('.card__departure-btn');
+
+  const getMoreItem = () => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+
+    li.className = 'card__departure';
+    a.href = '#URL';
+    a.className = 'card__departure-btn';
+    a.textContent = 'eще...';
+
+    li.append(a);
+
+    return li;
+  };
+
+  const moreItem = getMoreItem();
 
   const removeActiveBtns = () => {
     for (let btn of btns) {
@@ -97,9 +97,7 @@ departuresContainers.forEach((container) => {
       departureItems.forEach((item, i) => {
         if (item.offsetTop === 0 && i === findLastElInFirstLine()) {
           item.before(moreItem);
-
           const btnMore = moreItem.querySelector('.card__departure-btn');
-
           btnMore.addEventListener('click', onBtnMoreClick);
         }
       });
